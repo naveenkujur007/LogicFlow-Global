@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogicFlow Global AI | Automated Ecosystems & Ad Campaigns</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- International Telephone Input CSS (For Country Flags and Codes) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/css/intl-tel-input.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#030712',
+                        cardBg: '#0f172a',
+                        borderCol: '#1e293b',
+                        accentCyan: '#06b6d4',
+                        accentLime: '#a3e635',
+                        accentBlue: '#3b82f6',
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030712;
+            color: #f8fafc;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        .glow-lime {
+            box-shadow: 0 0 20px rgba(163, 230, 53, 0.15);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+        /* Overriding intl-tel-input theme to match dark design */
+        .iti { width: 100%; }
+        .iti__country-list {
+            background-color: #0f172a !important;
+            border: 1px solid #1e293b !important;
+            color: #f8fafc !important;
+            z-index: 99;
+        }
+        .iti__country:hover {
+            background-color: #1e293b !important;
+        }
+        .iti__selected-country {
+            background-color: #1e293b !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-borderCol">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accentCyan to-accentLime flex items-center justify-center shadow-lg shadow-accentCyan/20">
+                    <i class="fa-solid fa-earth-americas text-darkBg text-xl font-bold"></i>
+                </div>
+                <span class="font-poppins font-extrabold text-2xl tracking-tight text-white">LogicFlow<span class="text-accentCyan"> Global</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#problem" class="text-gray-400 hover:text-white transition-colors">The Challenge</a>
+                <a href="#services" class="text-gray-400 hover:text-white transition-colors">Our Stack</a>
+                <a href="#simulator" class="text-gray-400 hover:text-white transition-colors">How It Works</a>
+                <a href="#calculator" class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-sm tracking-wide hover:opacity-90 transition-all shadow-md shadow-accentCyan/20 block hover:scale-105 duration-300">
+                    Book Free AI Audit
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <div class="absolute top-1/4 right-[-10%] w-[500px] h-[500px] bg-accentCyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-[-10%] w-[500px] h-[500px] bg-accentLime/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accentBlue/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 text-left space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cardBg border border-borderCol text-xs font-semibold tracking-wider uppercase text-accentCyan hover:border-accentCyan/50 transition-colors cursor-default">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accentCyan opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accentCyan"></span>
+                    </span>
+                    Global Decentralized AI Orchestration & Ads
+                </div>
+                <h1 class="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight">
+                    We Put Multi-Business Empires On <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan via-accentLime to-accentCyan animate-gradient-x">Autopilot Worldwide</span>
+                </h1>
+                <p class="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl">
+                    We run high-converting Meta & Google Ads, and deploy premium landing infrastructures, custom n8n data pathways, and ultra-realistic ElevenLabs AI Voice agents to qualify cross-border leads and book calendar slots 24/7.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#contact" class="px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 hover:-translate-y-1 transition-all glow-cyan duration-300">
+                        Schedule International Audit
+                    </a>
+                    <a href="#simulator" class="px-8 py-4 rounded-xl bg-cardBg border border-borderCol text-white text-center font-semibold hover:border-accentCyan/50 hover:bg-cardBg/80 transition-all duration-300">
+                        <i class="fa-solid fa-play mr-2 text-accentLime"></i> Live System Sandbox
+                    </a>
+                </div>
+            </div>
+
+            <!-- Side Mockup Code Card -->
+            <div class="lg:col-span-5 relative animate-float">
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl relative z-10 shadow-2xl shadow-accentCyan/10 backdrop-blur-sm bg-opacity-90">
+                    <div class="flex items-center justify-between border-b border-borderCol pb-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors"></span>
+                        </div>
+                        <span class="text-xs font-mono text-gray-500">global-marketing-engine.json</span>
+                    </div>
+                    
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="text-accentBlue">// Step 1: Ad Campaign Triggered</div>
+                        <div class="text-gray-300 pl-4 space-y-1">
+                            <p><span class="text-blue-400">Source:</span> Meta & Google Ads 🚀</p>
+                            <p><span class="text-blue-400">Status:</span> Generating High-Intent Leads</p>
+                        </div>
+                        <div class="text-accentCyan mt-4">// Step 2: Dynamic Routing</div>
+                        <div class="text-gray-300 pl-4 space-y-1">
+                            <p><span class="text-cyan-400">Inbound Origin:</span> Global Web Traffic 🌍</p>
+                            <p><span class="text-cyan-400">Target Pipeline:</span> ElevenLabs Voice Agent</p>
+                        </div>
+                        <div class="pt-4 border-t border-borderCol/60 flex items-center justify-between text-xs text-gray-500">
+                            <span>Zone: Edge Servers</span>
+                            <span class="text-accentLime">Ping: 12ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM SECTION -->
+    <section id="problem" class="py-24 bg-cardBg/40 border-y border-borderCol relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">The Multi-Business Scalability Trap</h2>
+                <p class="text-gray-400">Running multiple niches fractures your attention. Manual sales outreach simply cannot catch every prospective lead fast enough to convert them.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-red-500/30 hover:-translate-y-1 transition-all duration-300 group shadow-lg hover:shadow-red-500/10">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-red-500 text-xl mb-6 group-hover:bg-red-500 group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-hourglass-empty"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-poppins text-white mb-3">The 5-Minute Lead Drop-Off</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        If an ad prospect isn't called, emailed, or engaged with in under 5 minutes, conversion rates plunge by 80%. When you are busy running Operations A, you are actively losing customers in Operation B.
+                    </p>
+                </div>
+
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-accentCyan/30 hover:-translate-y-1 transition-all duration-300 group shadow-lg hover:shadow-accentCyan/10">
+                    <div class="w-12 h-12 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-xl mb-6 group-hover:bg-accentCyan group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-poppins text-white mb-3">Siloed, Messy Systems</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Managing fragmented dashboards for different domains, CRMs, and email lists triggers continuous context switching. This overhead bottlenecks your enterprise growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section id="services" class="py-24 border-t border-borderCol relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-accentCyan font-bold tracking-widest text-sm uppercase">Full-Funnel Automation</span>
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">Our Enterprise Deployment Stack</h2>
+                <p class="text-gray-400">Built to handle performance campaigns on Meta &amp; Google Ads alongside cross-border AI operations seamlessly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Card 4 (New Ads Card) placed first in logical flow -->
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300 relative group shadow-lg hover:shadow-blue-500/20">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/15 flex items-center justify-center text-blue-500 text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-meta mr-1"></i> <i class="fa-brands fa-google ml-1"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">Meta & Google Ads</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        End-to-end performance marketing. We run high-converting campaigns on Facebook, Instagram, and Google to generate high-intent leads.
+                    </p>
+                </div>
+                <!-- Card 1 -->
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-accentCyan hover:-translate-y-2 transition-all duration-300 relative group shadow-lg hover:shadow-accentCyan/20">
+                    <div class="w-14 h-14 rounded-2xl bg-accentCyan/15 flex items-center justify-center text-accentCyan text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">Hostinger Cloud</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Global hosting structures running high-converting landing assets optimized for ad campaigns across North America, Europe, and Asia.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-accentLime hover:-translate-y-2 transition-all duration-300 relative group shadow-lg hover:shadow-accentLime/20">
+                    <div class="w-14 h-14 rounded-2xl bg-accentLime/15 flex items-center justify-center text-accentLime text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">n8n Data Engines</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Complex logic routing that intercepts Web3Forms payloads or ad platform leads, updating worldwide CRMs instantly.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-cardBg border border-borderCol p-8 rounded-2xl hover:border-purple-500 hover:-translate-y-2 transition-all duration-300 relative group shadow-lg hover:shadow-purple-500/20">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/15 flex items-center justify-center text-purple-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">ElevenLabs AI Bots</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ultra-realistic vocal layers configured to match country specific preferences, regional accents, and custom conversational speeds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE LIVE SIMULATOR -->
+    <section id="simulator" class="py-24 bg-cardBg/30 border-y border-borderCol/50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">Cross-Border Automation Loop</h2>
+                <p class="text-gray-400">See how our stack parses incoming ad leads and initiates conversational qualification sequences instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="font-poppins font-bold text-2xl text-white">Simulate a Global Lead Capture</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        When a lead registers through your Hostinger landing pages or Meta Lead Forms, our backend n8n engine starts instant operations in under a second. Try our visual sandbox simulator to watch it process.
+                    </p>
+                    <button id="btn-simulate" onclick="startWorkflowSimulation()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 hover:scale-105 transition-all glow-cyan flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-bolt"></i> Fire Simulated Trigger
+                    </button>
+                </div>
+
+                <div class="lg:col-span-7 bg-cardBg border border-borderCol p-8 rounded-2xl relative min-h-[350px] flex flex-col justify-between shadow-2xl">
+                    <div class="space-y-4" id="simulation-output">
+                        <div class="flex items-center gap-3 p-4 bg-darkBg/50 rounded-xl border border-borderCol text-gray-400 font-mono text-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gray-600 animate-pulse"></span>
+                            <span>System waiting for ad campaign or form simulation...</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderCol flex items-center justify-between text-xs font-mono text-gray-500">
+                        <span>Status Engine: <span id="sim-status-label" class="text-gray-400">STANDBY</span></span>
+                        <span id="sim-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ROI CALCULATOR -->
+    <section id="calculator" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-cardBg border border-borderCol p-8 lg:p-12 rounded-3xl relative shadow-2xl hover:shadow-accentLime/5 transition-shadow duration-500">
+                <!-- Input Controls -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="font-poppins font-semibold text-white">Monthly Ad Leads Across Verticals</label>
+                            <span id="lead-value-display" class="font-mono text-accentCyan font-bold text-lg bg-darkBg px-3 py-1 rounded border border-borderCol">250</span>
+                        </div>
+                        <input type="range" id="input-leads" min="50" max="2000" step="50" value="250" oninput="calculateROI()" class="w-full accent-accentCyan bg-darkBg h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="font-poppins font-semibold text-white">Average Deal Value ($ USD)</label>
+                            <span id="deal-value-display" class="font-mono text-accentLime font-bold text-lg bg-darkBg px-3 py-1 rounded border border-borderCol">$1,000</span>
+                        </div>
+                        <input type="range" id="input-deal-worth" min="100" max="10000" step="100" value="1000" oninput="calculateROI()" class="w-full accent-accentLime bg-darkBg h-2 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Outputs -->
+                <div class="lg:col-span-5 bg-darkBg/70 border border-borderCol p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-xs font-semibold tracking-wider uppercase text-accentCyan">RECOVERED CONVERSIONS REVENUE</span>
+                        <h4 id="calc-revenue" class="font-poppins font-extrabold text-4xl text-accentLime mt-1">$17,500<span class="text-base font-normal text-gray-500">/mo</span></h4>
+                    </div>
+                    <a href="#contact" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 block hover:scale-[1.02] transition-transform">
+                        Deploy Strategic Automation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-24 bg-cardBg/30 border-t border-borderCol">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-4 space-y-4">
+                    <span class="text-xs font-semibold tracking-wider uppercase text-accentCyan">CLIENT FOCUS</span>
+                    <h2 class="font-poppins font-extrabold text-3xl text-white">Real Performance Success Cases</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Read how multi-business managers scaled conversions across different niches using our custom Ad Campaigns, Hostinger &amp; ElevenLabs integrated workflows.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Case study 1 -->
+                    <div class="bg-cardBg border border-borderCol p-8 rounded-2xl space-y-6 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 text-accentLime">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed">
+                            "LogicFlow Global ran our Meta Ads and built our central Hostinger funnel hooking up ElevenLabs for voice. Leads are generated and booked in our calendar within seconds."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-accentCyan/20 flex items-center justify-center text-accentCyan font-bold">AK</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Anil Kumar</h4>
+                                <span class="text-xs text-gray-500">Founder, Real Estate &amp; Ad Partners</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case study 2 -->
+                    <div class="bg-cardBg border border-borderCol p-8 rounded-2xl space-y-6 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 text-accentLime">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed">
+                            "We had massive ad-spend leakage before they took over our Google Ads. They linked our ads with n8n and an ElevenLabs voice assistant. It sounds amazingly human!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-accentLime/20 flex items-center justify-center text-accentLime font-bold">RD</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Rahul Deshmukh</h4>
+                                <span class="text-xs text-gray-500">Owner, Multi-Brand Retail Outlets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNATIONAL CONTACT SECTION -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-12">
+            <div class="space-y-4">
+                <h2 class="font-poppins font-extrabold text-4xl sm:text-5xl text-white">Book Your Free Global AI & Ads Audit</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Configure your business parameters below to coordinate your strategic setup blueprint instantly over WhatsApp.
+                </p>
+            </div>
+
+            <div class="bg-cardBg border border-borderCol p-8 sm:p-10 rounded-3xl text-left shadow-2xl relative glow-cyan">
+                <!-- 100% Free Form - Opens WhatsApp on Submit -->
+                <form id="audit-form" onsubmit="handleFormSubmission(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="form-name" required placeholder="John Doe" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentCyan focus:ring-1 focus:ring-accentCyan transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Corporate Email Address</label>
+                            <input type="email" id="form-email" required placeholder="john@company.com" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentCyan focus:ring-1 focus:ring-accentCyan transition-all">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- International Telephone Dropdown -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">WhatsApp / Phone Number</label>
+                            <input type="tel" id="form-phone" required class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentCyan focus:ring-1 focus:ring-accentCyan transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Service Required</label>
+                            <select id="form-services" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-accentCyan focus:ring-1 focus:ring-accentCyan transition-all">
+                                <option>AI Automation & Setup</option>
+                                <option>Meta / Google Ads Management</option>
+                                <option>Full Suite (Ads + AI System)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Primary Automation or Performance Scaling Goal</label>
+                        <textarea id="form-goal" rows="4" placeholder="Describe systems, channels, or current Meta/Google ad leaks you wish to patch..." class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentCyan focus:ring-1 focus:ring-accentCyan transition-all"></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-submit-form" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 hover:scale-[1.01] transition-all glow-cyan flex items-center justify-center gap-3">
+                        <span id="submit-btn-text" class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Secure Architecture Session via WhatsApp
+                        </span>
+                        <span id="submit-btn-spinner" class="hidden">
+                            <i class="fa-solid fa-circle-notch animate-spin text-xl"></i> Redirecting to WhatsApp Chat...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUCCESS MODAL (REPLACES BROWSER ALERT) -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-darkBg/90 backdrop-blur-sm hidden">
+        <div class="bg-cardBg border border-borderCol p-8 max-w-md w-full rounded-2xl text-center space-y-6">
+            <div class="w-16 h-16 rounded-full bg-accentLime/15 flex items-center justify-center text-accentLime text-3xl mx-auto">
+                <i class="fa-solid fa-paper-plane animate-bounce"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-poppins font-extrabold text-2xl text-white">Opening WhatsApp Chat</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Aapki request prepare ho chuki hai. Hum aapko direct WhatsApp chat par redirect kar rahe hain. Bas hume wahan message send kar dijiye!
+                </p>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full py-3 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold transition-all hover:opacity-90">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-darkBg border-t border-borderCol/50">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <span class="font-poppins font-bold text-xl text-white">LogicFlow<span class="text-accentCyan"> Global</span></span>
+            <div class="text-center md:text-right">
+                <p class="text-sm text-gray-400">Support Email: <a href="mailto:naveenkujur077@gmail.com" class="text-accentCyan hover:underline">naveenkujur077@gmail.com</a></p>
+                <p class="text-xs text-gray-500 mt-1">&copy; 2026 LogicFlow Global AI. Operational Systems & Ads Deployment Engine.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts for International Dropdowns and Calculation Systems -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intl-tel-input.min.js"></script>
+    <script>
+        // === !!! IMPORTANT CONFIGURATION !!! ===
+        // Enter your WhatsApp number here with your country code (WITHOUT "+" or spaces)
+        const AGENCY_WHATSAPP_NUMBER = "918709909162"; 
+
+        // Initialize International Telephone Input Dropdown Engine
+        const phoneInputField = document.querySelector("#form-phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("IN")); // Default fall-back to India
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js",
+        });
+
+        // Form Submission Processor using Direct WhatsApp Link Generation
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('btn-submit-form');
+            const btnText = document.getElementById('submit-btn-text');
+            const btnSpinner = document.getElementById('submit-btn-spinner');
+
+            // Set loading state UI
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+
+            // Capture Form Values
+            const clientName = document.getElementById('form-name').value;
+            const clientEmail = document.getElementById('form-email').value;
+            const rawPhone = document.getElementById('form-phone').value;
+            const fullInternationalPhone = phoneInput.getNumber(); // formats to absolute +1xx / +91xx
+            const serviceRequested = document.getElementById('form-services').value;
+            const clientGoal = document.getElementById('form-goal').value;
+
+            // Generate beautifully structured WhatsApp Text
+            const textMessage = `*🔥 NEW AUDIT & ADS REQUEST * \n\n` +
+                                `*👤 Name:* ${clientName}\n` +
+                                `*📧 Email:* ${clientEmail}\n` +
+                                `*📞 Phone:* ${fullInternationalPhone} (Raw: ${rawPhone})\n` +
+                                `*🎯 Service:* ${serviceRequested}\n` +
+                                `*📝 Goal/Details:* ${clientGoal}\n\n` +
+                                `_Please let me know when we can jump on a brief discovery call!_`;
+
+            // URL Encode the message
+            const encodedText = encodeURIComponent(textMessage);
+
+            // Construct WhatsApp API Link
+            const whatsappLink = `https://api.whatsapp.com/send?phone=${AGENCY_WHATSAPP_NUMBER}&text=${encodedText}`;
+
+            // Show modal and reset form
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('audit-form').reset();
+
+            // Open WhatsApp in a new tab/window after 1 second
+            setTimeout(() => {
+                window.open(whatsappLink, '_blank');
+                
+                // Reset submit button state
+                submitBtn.disabled = false;
+                btnText.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+            }, 1000);
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Live Simulation Logic
+        function startWorkflowSimulation() {
+            const output = document.getElementById('simulation-output');
+            const label = document.getElementById('sim-status-label');
+            const percentage = document.getElementById('sim-percentage');
+            output.innerHTML = '';
+            
+            const steps = [
+                { id: 1, text: "Ad Campaign lead captured & validated.", color: "text-accentCyan", pct: "33%", label: "LEAD_OK" },
+                { id: 2, text: "International country dial codes processed.", color: "text-accentLime", pct: "66%", label: "GEOMAP_MAPPED" },
+                { id: 3, text: "AI Voice Bot assigned & scheduling sequence triggered.", color: "text-blue-400", pct: "100%", label: "SEQUENCE_LIVE" }
+            ];
+
+            let i = 0;
+            function run() {
+                if (i < steps.length) {
+                    label.textContent = steps[i].label;
+                    percentage.textContent = steps[i].pct;
+                    const el = document.createElement('div');
+                    el.className = "flex items-start gap-4 p-4 bg-darkBg/60 border border-borderCol rounded-xl transform transition-all translate-y-0 opacity-100 duration-500 shadow-sm";
+                    el.innerHTML = `<div class="font-mono text-sm ${steps[i].color}"><strong>${steps[i].label}</strong><p class='text-gray-300'>${steps[i].text}</p></div>`;
+                    output.appendChild(el);
+                    i++;
+                    setTimeout(run, 1500);
+                }
+            }
+            run();
+        }
+
+        // ROI Calculator Logic
+        function calculateROI() {
+            const leads = parseFloat(document.getElementById('input-leads').value);
+            const dealWorth = parseFloat(document.getElementById('input-deal-worth').value);
+            document.getElementById('lead-value-display').innerText = leads;
+            document.getElementById('deal-value-display').innerText = `$${dealWorth.toLocaleString()}`;
+            const revenueIncreased = Math.round(leads * 0.07 * dealWorth);
+            document.getElementById('calc-revenue').innerHTML = `$${revenueIncreased.toLocaleString()}<span class="text-base font-normal text-gray-500">/mo</span>`;
+        }
+
+        window.onload = function() { calculateROI(); }
+    </script>
+</body>
+</html>
