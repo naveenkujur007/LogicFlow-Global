@@ -1,5 +1,403 @@
-<!-- ... existing code ... -->
-        // Form Submission Processor using Direct WhatsApp Link Generation
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogicFlow Global AI | Automated Multi-Business Ecosystems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/css/intl-tel-input.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                        signature: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        darkBg: '#030712',
+                        cardBg: '#0f172a',
+                        borderCol: '#1e293b',
+                        accentCyan: '#06b6d4',
+                        accentLime: '#a3e635',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #030712; color: #f8fafc; }
+        .glow-cyan { box-shadow: 0 0 25px rgba(6, 182, 212, 0.15); }
+        .glow-lime { box-shadow: 0 0 25px rgba(163, 230, 53, 0.15); }
+        /* Custom UI scrollbars optimization */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+        /* intl-tel-input integration styles adjustments */
+        .iti { width: 100%; }
+        .iti__country-list {
+            background-color: #0f172a !important;
+            border: 1px solid #1e293b !important;
+            color: #f8fafc !important;
+            z-index: 99;
+        }
+        .iti__country:hover { background-color: #1e293b !important; }
+        .iti__selected-country { background-color: #1e293b !important; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-borderCol">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accentCyan to-accentLime flex items-center justify-center shadow-lg shadow-accentCyan/10">
+                    <i class="fa-solid fa-microchip text-darkBg text-xl font-bold"></i>
+                </div>
+                <span class="font-poppins font-extrabold text-2xl tracking-tight text-white">LogicFlow<span class="text-accentCyan"> Global</span></span>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#problem" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">The Challenge</a>
+                <a href="#services" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Services</a>
+                <a href="#simulator" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Simulator</a>
+                <a href="#calculator" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">ROI Calculator</a>
+                <a href="#founder" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Founder</a>
+                <a href="#contact" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-sm tracking-wide hover:opacity-90 transition-all shadow-md shadow-accentCyan/20 block">
+                    Book Free AI Audit
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <div class="absolute top-1/4 right-[-10%] w-[500px] h-[500px] bg-accentCyan/10 rounded-full blur-[130px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-[-10%] w-[500px] h-[500px] bg-accentLime/5 rounded-full blur-[130px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 text-left space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cardBg border border-borderCol text-xs font-semibold tracking-wider uppercase text-accentCyan">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accentCyan opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accentCyan"></span>
+                    </span>
+                    Global Decentralized Systems Orchestration
+                </div>
+                <h1 class="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight">
+                    Scale Your Multi-Business Empire On <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan to-accentLime">Autopilot Worldwide</span>
+                </h1>
+                <p class="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-3xl">
+                    Deploy premium infrastructure architectures built for scale. We engineer high-converting landing components, visual automated data flows, and interactive audio systems to completely patch enterprise operation decay.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 transition-all glow-cyan">
+                        Secure Strategic Architecture Session
+                    </a>
+                    <a href="#simulator" class="px-8 py-4 rounded-xl bg-cardBg border border-borderCol text-white text-center font-semibold hover:border-accentCyan/50 transition-all">
+                        <i class="fa-solid fa-play mr-2 text-accentLime"></i> Enter System Sandbox
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 relative hidden lg:block">
+                <div class="bg-cardBg border border-borderCol p-6 rounded-2xl glow-cyan space-y-4 font-mono text-xs">
+                    <div class="flex items-center justify-between border-b border-borderCol pb-3 text-gray-500">
+                        <span>system-cluster.log</span>
+                        <span class="text-accentLime">ONLINE</span>
+                    </div>
+                    <p class="text-accentCyan">// Automated Parameters Syncing</p>
+                    <p class="text-gray-400">• Core Hostinger Engine: Speed Tuned <span class="text-white font-bold">(0.4s)</span></p>
+                    <p class="text-gray-400">• n8n Operational Pipelines: <span class="text-white font-bold">Active</span></p>
+                    <p class="text-gray-400">• ElevenLabs Stream Layer: <span class="text-white font-bold">Connected</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="py-26 bg-cardBg/30 border-y border-borderCol relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-semibold tracking-wider uppercase text-red-500">THE CONVERSION LEAKAGE</span>
+                    <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">The Fatal 5-Minute Communication Decay</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Industry analytics confirm that waiting past 5 minutes to contact an inbound campaign prospect drops overall conversion retainment by **80%**. When attention is split across multiple business verticals, revenue decay is inevitable.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 bg-darkBg border border-borderCol p-8 rounded-3xl grid grid-cols-1 sm:grid-cols-2 gap-6 relative overflow-hidden">
+                    <div class="p-6 bg-cardBg/50 rounded-2xl border border-borderCol border-l-4 border-l-red-500 space-y-3">
+                        <div class="text-3xl font-extrabold text-red-500 font-poppins">80% Drop</div>
+                        <h4 class="text-white font-bold">Manual Lead Degradation</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Slow context switching across independent dashboards causes inbound traffic to immediately turn cold.</p>
+                    </div>
+                    <div class="p-6 bg-cardBg/50 rounded-2xl border border-borderCol border-l-4 border-l-accentLime space-y-3">
+                        <div class="text-3xl font-extrabold text-accentLime font-poppins">&lt; 10 Seconds</div>
+                        <h4 class="text-white font-bold">Automated Callback Loop</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">System instantly triggers conversational parameters to catch prospects while intent remains at peak metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-28 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">Our Integrated Infrastructure Triad</h2>
+                <p class="text-gray-400">Engineered explicitly to support performance operations across multi-brand setups simultaneously.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-cardBg/80 border border-borderCol p-8 rounded-2xl hover:border-accentCyan/50 transition-all relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-2xl mb-8 group-hover:bg-accentCyan group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">Hostinger Cloud Front</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        High-availability landing architectures configured on optimized cloud frameworks to guarantee minimal latency and maximal response retention rates under severe traffic spikes.
+                    </p>
+                </div>
+                <div class="bg-cardBg/80 border border-borderCol p-8 rounded-2xl hover:border-accentLime/50 transition-all relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-accentLime/10 flex items-center justify-center text-accentLime text-2xl mb-8 group-hover:bg-accentLime group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">n8n Orchestration Logic</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The visual automation core operating continuous background routines. Intercepts incoming parameters, formats metadata sequences, and populates CRMs securely.
+                    </p>
+                </div>
+                <div class="bg-cardBg/80 border border-borderCol p-8 rounded-2xl hover:border-accentCyan/50 transition-all relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-2xl mb-8 group-hover:bg-accentCyan group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-poppins text-white mb-4">ElevenLabs Audio Agents</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Human-grade voice layers that trigger conversational paths instantly. Formatted with natural latency buffers, warm regional accents, and custom inflection modes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulator" class="py-26 bg-cardBg/20 border-y border-borderCol relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">Live System Sandbox</h2>
+                <p class="text-gray-400 text-sm">Experience the automated pipeline in real-time. Trigger the processing loop below.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="font-poppins font-bold text-2xl text-white">Simulate An International Ad Lead Event</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Watch how the infrastructure responds the millisecond a multi-vertical prospect registers on our high-speed hosted portal layers.
+                    </p>
+                    <button id="btn-simulate" onclick="startWorkflowSimulation()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide hover:opacity-90 transition-all glow-cyan flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-bolt"></i> Fire Simulated Trigger
+                    </button>
+                </div>
+
+                <div class="lg:col-span-7 bg-cardBg border border-borderCol p-8 rounded-2xl min-h-[350px] flex flex-col justify-between">
+                    <div class="space-y-4" id="simulation-output">
+                        <div class="flex items-center gap-3 p-4 bg-darkBg/60 rounded-xl border border-borderCol/60 text-gray-500 font-mono text-xs">
+                            <span class="w-2 h-2 rounded-full bg-gray-600 animate-pulse"></span>
+                            <span>System standing by for orchestration terminal routing call...</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-borderCol/60 flex items-center justify-between text-xs font-mono text-gray-500">
+                        <span>Pipeline Engine: <span id="sim-status-label" class="text-gray-400">STANDBY</span></span>
+                        <span id="sim-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-26">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16 space-y-3">
+                <h2 class="font-poppins font-extrabold text-3xl text-white">Calculate Enterprise Return Rates</h2>
+                <p class="text-gray-400 text-sm">Adjust parameters to compute automated time-retention metrics dynamically.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-cardBg border border-borderCol p-8 lg:p-12 rounded-3xl relative">
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="font-poppins font-semibold text-sm text-gray-300">Monthly Performance Ad Leads</label>
+                            <span id="lead-value-display" class="font-mono text-accentCyan font-bold text-base bg-darkBg px-3 py-1 rounded border border-borderCol">250</span>
+                        </div>
+                        <input type="range" id="input-leads" min="50" max="2000" step="50" value="250" oninput="calculateROI()" class="w-full accent-accentCyan bg-darkBg h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="font-poppins font-semibold text-sm text-gray-300">Average Value per Deal Contract ($ USD)</label>
+                            <span id="deal-value-display" class="font-mono text-accentLime font-bold text-base bg-darkBg px-3 py-1 rounded border border-borderCol">$1,000</span>
+                        </div>
+                        <input type="range" id="input-deal-worth" min="100" max="10000" step="100" value="1000" oninput="calculateROI()" class="w-full accent-accentLime bg-darkBg h-2 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-darkBg/60 border border-borderCol p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-xs font-semibold tracking-wider text-accentCyan uppercase block">Projected Revenue Retention</span>
+                        <h4 id="calc-revenue" class="font-poppins font-extrabold text-4xl text-accentLime mt-1">$17,500<span class="text-sm font-normal text-gray-500">/mo</span></h4>
+                    </div>
+                    <a href="#contact" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide text-sm block">
+                        Deploy System Infrastructure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="py-26 bg-cardBg/40 border-t border-borderCol relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-xs font-semibold tracking-wider uppercase text-accentCyan block mb-2">THE VISIONARY BEHIND THE FLOW</span>
+                <h2 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white">Leadership &amp; Architecture</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group p-3 rounded-3xl bg-gradient-to-tr from-accentCyan via-borderCol to-accentLime glow-cyan max-w-[380px] w-full overflow-hidden">
+                        <div class="bg-darkBg p-2 rounded-[22px]">
+                            <img src="https://files.oaiusercontent.com/file-K1kL6tYmH8JbV6n8w7N4Gv?se=2024-10-24T10:38:51Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Ddf549925-5028-4034-8c01-71578335198e.webp&sig=G035Kj6a3rXpZf4Wz8L7E%2B8d%2Byr0A5n9Z7J6N%2BsP%2BvU%3D" 
+                                 alt="Naveen Pratik Kujur" 
+                                 class="w-full h-auto rounded-xl filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 object-cover aspect-[3/4]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="space-y-1">
+                        <h3 class="font-poppins font-extrabold text-3xl sm:text-4xl text-white tracking-tight">Naveen Pratik Kujur</h3>
+                        <p class="text-sm font-semibold tracking-widest text-accentCyan uppercase">Founder &amp; Chief AI Architect</p>
+                    </div>
+                    <hr class="border-borderCol max-w-xs">
+                    <p class="text-gray-300 text-base leading-relaxed max-w-2xl font-light">
+                        Naveen is dedicated to helping entrepreneurs bridge the gap between complex technology and operational freedom. By orchestrating global-scale AI systems, he ensures your business never misses a lead, no matter where you are in the world.
+                    </p>
+                    <div class="pt-4">
+                        <span class="font-signature text-4xl text-accentLime block">Naveen Pratik Kujur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-26 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-12">
+            <div class="space-y-3">
+                <h2 class="font-poppins font-extrabold text-4xl text-white">Secure Global Framework Evaluation</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                    Configure your operational metrics below. Submission routes parameters instantly to core WhatsApp routing channels.
+                </p>
+            </div>
+
+            <div class="bg-cardBg border border-borderCol p-8 sm:p-10 rounded-3xl text-left shadow-2xl relative">
+                <form id="audit-form" onsubmit="handleFormSubmission(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Corporate Operator Name</label>
+                            <input type="text" id="form-name" required placeholder="John Doe" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accentCyan transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Enterprise Email Address</label>
+                            <input type="email" id="form-email" required placeholder="john@company.com" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accentCyan transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Secure WhatsApp Endpoint</label>
+                            <input type="tel" id="form-phone" required class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accentCyan transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Operational Multi-Brand Scale</label>
+                            <select id="form-businesses" class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-gray-400 text-sm focus:outline-none focus:border-accentCyan transition-colors">
+                                <option>1 Active Corporate Branch</option>
+                                <option>2 - 3 Independent Operations</option>
+                                <option>4+ Global Verticals Cluster</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Primary Automation Target Parameters</label>
+                        <textarea id="form-goal" rows="4" placeholder="Detail active leakage zones or infrastructure configuration goals..." class="w-full bg-darkBg border border-borderCol rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accentCyan transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-submit-form" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg font-bold text-center tracking-wide text-sm hover:opacity-90 transition-all glow-cyan flex items-center justify-center gap-3">
+                        <span id="submit-btn-text" class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Execute Secure Transmission Over WhatsApp
+                        </span>
+                        <span id="submit-btn-spinner" class="hidden">
+                            <i class="fa-solid fa-circle-notch animate-spin text-base"></i> Building System Protocol Tunnel...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-darkBg/95 backdrop-blur-sm hidden">
+        <div class="bg-cardBg border border-borderCol p-8 max-w-md w-full rounded-2xl text-center space-y-6 glow-lime">
+            <div class="w-14 h-14 rounded-full bg-accentLime/10 flex items-center justify-center text-accentLime text-2xl mx-auto">
+                <i class="fa-solid fa-satellite-dish animate-pulse"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-poppins font-extrabold text-xl text-white">Tunnel Routing Initialized</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Form telemetry structured. Executing dynamic inline interface migration to official brand channel threads without pop-up triggers.
+                </p>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-accentCyan to-accentLime text-darkBg text-xs font-bold transition-all">
+                Acknowledge Protocol
+            </button>
+        </div>
+    </div>
+
+    <footer class="py-12 bg-darkBg border-t border-borderCol/40">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <span class="font-poppins font-bold text-lg text-white">LogicFlow<span class="text-accentCyan"> Global</span></span>
+            <div class="text-center md:text-right">
+                <p class="text-xs text-gray-400">Corporate Infrastructure Gateway: <a href="mailto:naveenkujur077@gmail.com" class="text-accentCyan hover:underline font-mono">naveenkujur077@gmail.com</a></p>
+                <p class="text-[10px] text-gray-600 mt-1">&copy; 2026 LogicFlow Global AI. Automated Enterprise Nodes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intl-tel-input.min.js"></script>
+    <script>
+        // Official Core Target Endpoint Mapping Data Setup
+        const COMPANY_ROUTING_CHANNEL = "918709909162"; 
+
+        // Flags Overlay Execution Input Parser Logic
+        const phoneInputField = document.querySelector("#form-phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("IN"));
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js",
+        });
+
+        // Failproof Direct Inline Forwarding Framework Core Processing Loop
         function handleFormSubmission(event) {
             event.preventDefault();
             
@@ -7,72 +405,84 @@
             const btnText = document.getElementById('submit-btn-text');
             const btnSpinner = document.getElementById('submit-btn-spinner');
 
-            // Set loading state UI
             submitBtn.disabled = true;
             btnText.classList.add('hidden');
             btnSpinner.classList.remove('hidden');
 
-            try {
-                // Capture Form Values
-                const clientName = document.getElementById('form-name').value;
-                const clientEmail = document.getElementById('form-email').value;
-                const rawPhone = document.getElementById('form-phone').value;
-                
-                // Safe check in case phoneInput fails to initialize
-                let fullInternationalPhone = rawPhone;
-                if (phoneInput) {
-                    fullInternationalPhone = phoneInput.getNumber() || rawPhone;
-                }
-                
-                const loadLevel = document.getElementById('form-businesses').value;
-                const clientGoal = document.getElementById('form-goal').value;
+            const clientName = document.getElementById('form-name').value;
+            const clientEmail = document.getElementById('form-email').value;
+            const absolutePhone = phoneInput.getNumber(); 
+            const horizontalLoad = document.getElementById('form-businesses').value;
+            const executionGoal = document.getElementById('form-goal').value;
 
-                // Generate beautifully structured WhatsApp Text
-                const textMessage = `*🔥 NEW AI AUDIT REQUEST * \n\n` +
-                                    `*👤 Name:* ${clientName}\n` +
-                                    `*📧 Email:* ${clientEmail}\n` +
-                                    `*📞 Phone:* ${fullInternationalPhone} (Raw: ${rawPhone})\n` +
-                                    `*🏢 Ecosystem Load:* ${loadLevel}\n` +
-                                    `*🎯 Primary Goal:* ${clientGoal}\n\n` +
-                                    `_Please let me know when we can jump on a brief discovery call!_`;
+            // Strict formatted structured data logging message construction
+            const dynamicPayloadText = `*🔥 LOGICFLOW GLOBAL - INBOUND AUDIT ALERT * \n\n` +
+                                        `*👤 Account Name:* ${clientName}\n` +
+                                        `*📧 Gateway Email:* ${clientEmail}\n` +
+                                        `*📞 Protocol Phone:* ${absolutePhone}\n` +
+                                        `*🏢 Ecosystem Load:* ${horizontalLoad}\n` +
+                                        `*🎯 Strategy Parameter:* ${executionGoal}\n\n` +
+                                        `_System verified destination. Initializing brief session handshake._`;
 
-                // URL Encode the message
-                const encodedText = encodeURIComponent(textMessage);
+            const cleanEncodedURI = encodeURIComponent(dynamicPayloadText);
+            const absoluteTargetLink = `https://api.whatsapp.com/send?phone=${COMPANY_ROUTING_CHANNEL}&text=${cleanEncodedURI}`;
 
-                // Construct WhatsApp API Link
-                const whatsappLink = `https://api.whatsapp.com/send?phone=${AGENCY_WHATSAPP_NUMBER}&text=${encodedText}`;
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('audit-form').reset();
 
-                // Show success modal and reset form inputs
-                document.getElementById('success-modal').classList.remove('hidden');
-                document.getElementById('audit-form').reset();
-
-                // Direct tab navigation - BYPASSES POPUP BLOCKERS ENTIRELY
-                setTimeout(() => {
-                    window.location.href = whatsappLink;
-                    
-                    // Reset submit button state
-                    submitBtn.disabled = false;
-                    btnText.classList.remove('hidden');
-                    btnSpinner.classList.add('hidden');
-                }, 800);
-
-            } catch (error) {
-                console.error("Submission processing issue:", error);
-                
-                // Fallback direct redirection if anything else fails
-                const rawPhone = document.getElementById('form-phone').value;
-                const fallbackLink = `https://api.whatsapp.com/send?phone=${AGENCY_WHATSAPP_NUMBER}&text=Hi,%20I%20just%20submitted%20the%20AI%20Audit%20form%20on%20your%20website.%20My%20number%20is%20${rawPhone}`;
-                window.location.href = fallbackLink;
-            }
+            // Enforcing 100% stable inline path to completely destroy mobile browser pop-up blocks
+            setTimeout(() => {
+                window.location.href = absoluteTargetLink;
+            }, 900);
         }
 
         function closeSuccessModal() {
-<!-- ... existing code ... -->
-```
-eof
+            document.getElementById('success-modal').classList.add('hidden');
+        }
 
-### 🛠️ Kya Kiya Maine?
-1. **Bypassed Popup Blockers:** `window.open` ko `window.location.href` se badla taaki browser redirect ko block na kare.
-2. **Robust Error Handling:** Pure execution par ek `try-catch` cover lagaya hai taaki agar mobile network ya script loading me koi issue ho, toh bhi user direct whatsapp link par bina crash huye forward ho sake.
+        // Real-Time Visual Integration Sandbox Simulation Sequence Scripts
+        function startWorkflowSimulation() {
+            const output = document.getElementById('simulation-output');
+            const label = document.getElementById('sim-status-label');
+            const percentage = document.getElementById('sim-percentage');
+            output.innerHTML = '';
+            
+            const pipelineMatrix = [
+                { id: 1, text: "Inbound Telemetry Detected over API Portals.", color: "text-accentCyan", pct: "33%", tag: "WEBHOOK_CAPTURE" },
+                { id: 2, text: "Google Gemini Core evaluation finished. Mapping structural targets.", color: "text-accentLime", pct: "66%", tag: "INTENT_MAPPED" },
+                { id: 3, text: "ElevenLabs dialing server updated. Inline execution buffer active.", color: "text-accentCyan", pct: "100%", tag: "PIPELINE_COMPLETE" }
+            ];
 
-Aap is code ko paste karke commit kijiye. Vercel update hote hi ek baar browser refresh karke test kijiye, ab yeh bina kisi rukawat ke direct open ho jayega!
+            let sequenceIndex = 0;
+            function coreLoopExecution() {
+                if (sequenceIndex < pipelineMatrix.length) {
+                    label.textContent = pipelineMatrix[sequenceIndex].tag;
+                    percentage.textContent = pipelineMatrix[sequenceIndex].pct;
+                    const frameNode = document.createElement('div');
+                    frameNode.className = "flex items-start gap-4 p-4 bg-darkBg/80 border border-borderCol rounded-xl animate-pulse";
+                    frameNode.innerHTML = `<div class="font-mono text-xs ${pipelineMatrix[sequenceIndex].color}"><strong>[${pipelineMatrix[sequenceIndex].tag}]</strong><p class='text-gray-400 mt-1'>${pipelineMatrix[sequenceIndex].text}</p></div>`;
+                    output.appendChild(frameNode);
+                    sequenceIndex++;
+                    setTimeout(coreLoopExecution, 1400);
+                }
+            }
+            coreLoopExecution();
+        }
+
+        // Functional Dynamic Sliders ROI Evaluation Mathematical Logic Core
+        function calculateROI() {
+            const leadInputVolume = parseFloat(document.getElementById('input-leads').value);
+            const baselineContractWorth = parseFloat(document.getElementById('input-deal-worth').value);
+            
+            document.getElementById('lead-value-display').innerText = leadInputVolume;
+            document.getElementById('deal-value-display').innerText = `$${baselineContractWorth.toLocaleString()}`;
+            
+            // Evaluated algorithm metrics based on 7% leakage retainment constants
+            const computedNetRevenueValue = Math.round(leadInputVolume * 0.07 * baselineContractWorth);
+            document.getElementById('calc-revenue').innerHTML = `$${computedNetRevenueValue.toLocaleString()}<span class="text-sm font-normal text-gray-500">/mo</span>`;
+        }
+
+        window.onload = function() { calculateROI(); }
+    </script>
+</body>
+</html>
